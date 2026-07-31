@@ -1,0 +1,126 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #FFFDF7;
+  --navy: #17233C;
+  --muted: #5F6675;
+  --pink: #E91E63;
+  --pink-soft: #FCE3EC;
+  --teal: #61C4CC;
+  --teal-soft: #EAF9F8;
+  --yellow: #FFD447;
+  --orange: #F7941D;
+  --lavender: #EEE9FA;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--navy);
+  font-family: var(--font-poppins), sans-serif;
+}
+.container-wide {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.hand-drawn {
+  border: 2px solid #2B2455;
+  box-shadow: 4px 4px 0 #2B2455;
+}
+
+.blob {
+  border-radius: 48% 52% 45% 55% / 54% 42% 58% 46%;
+}
+
+.doodle {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ---- ADD THESE to the bottom of your existing app/globals.css ---- */
+
+/* Form inputs used by Contact.tsx */
+.input {
+  width: 100%;
+  border-radius: 14px;
+  border: 2px solid rgba(43, 36, 85, 0.15);
+  background: var(--cream);
+  padding: 12px 16px;
+  font-size: 15px;
+  color: #2b2455;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.input::placeholder {
+  color: rgba(43, 36, 85, 0.4);
+}
+.input:focus {
+  border-color: #E91E63;
+  box-shadow: 0 0 0 3px rgba(239, 91, 114, 0.15);
+}
+
+/* Optional: pause the marquee on hover so it feels less busy */
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.cute-input{
+  width:100%;
+  border:2px solid #ECECEC;
+  border-radius:22px;
+  background:white;
+  padding:16px 20px;
+  font-size:16px;
+  transition:.25s;
+}
+
+.cute-input:focus{
+  outline:none;
+  border-color:#E91E63;
+  box-shadow:0 8px 30px rgba(255,94,153,.15);
+}
+
+.cute-input::placeholder{
+  color:#9CA3AF;
+}
+
+.floating {
+  animation: float 5s ease-in-out infinite;
+}
+
+.floating-delay {
+  animation: float 5s ease-in-out 1.2s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+.marquee { overflow: hidden; white-space: nowrap; }
+.marquee-track {
+  display: inline-flex;
+  animation: marquee 25s linear infinite;
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+.reveal {
+  animation: reveal .7s ease both;
+}
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
