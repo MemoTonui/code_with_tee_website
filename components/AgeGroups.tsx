@@ -22,7 +22,7 @@ export default function AgeGroups() {
                   <span className="text-5xl font-extrabold tracking-[-0.07em]">{age}</span>
                   <h3 className="mt-4 text-2xl font-extrabold">{title}</h3>
                 </div>
-                <span className="text-4xl text-pink">✦</span>
+                <span className="text-4xl text-pink"></span>
               </div>
               <p className="mt-8 text-xl font-bold">“{question}”</p>
               <p className="mt-4 max-w-lg leading-7 text-ink/65">{text}</p>
@@ -33,3 +33,4 @@ export default function AgeGroups() {
     </section>
   );
 }
+5

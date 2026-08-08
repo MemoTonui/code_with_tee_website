@@ -43,7 +43,7 @@ export default function Header() {
               <a href="#about" onClick={() => setOpen(false)} className="font-semibold">About</a>
               <a href="#explore" onClick={() => setOpen(false)} className="font-semibold">What we explore</a>
               <a href="#ages" onClick={() => setOpen(false)} className="font-semibold">Age groups</a>
-              <a href="#contact" onClick={() => setOpen(false)} className="w-fit rounded-full bg-yellow px-5 py-3 font-bold">Let&apos;s build ✦</a>
+              <a href="#contact" onClick={() => setOpen(false)} className="w-fit rounded-full bg-dark px-5 py-3 font-bold">Let&apos;s build</a>
             </div>
           </div>
         )}

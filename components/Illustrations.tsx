@@ -1,26 +1,23 @@
 import heroImage from "@/app/images/linda2.jpg";
+import mentorImage from "@/app/images/linda-teaching.jpg";
 
 export function HeroIllustration() {
   return (
     <div className="relative mx-auto w-full max-w-[640px] lg:translate-y-6">
 
-      {/* ========================= */}
-      {/* Soft background blob */}
-      {/* ========================= */}
+      {/* Soft background glow */}
 
       <div className="absolute inset-6 -z-30 rounded-[45%_55%_50%_50%/40%_58%_42%_60%] bg-mint/25 blur-2xl" />
 
-      {/* ========================= */}
-      {/* Scrapbook papers */}
-      {/* ========================= */}
+      {/* Scrapbook layer 1 */}
 
       <div className="absolute inset-0 -rotate-6 rounded-[42px] bg-yellow/60 shadow-md" />
 
-      <div className="absolute inset-0 rotate-12 rounded-[42px] bg-pink/15 shadow-md" />
+      {/* Scrapbook layer 2 */}
 
-      {/* ========================= */}
-      {/* Photo */}
-      {/* ========================= */}
+      <div className="absolute inset-0 rotate-3 rounded-[42px] bg-pink/15 shadow-md" />
+
+      {/* Main photograph */}
 
       <div className="relative overflow-hidden rounded-[44px] border-[8px] border-white bg-white shadow-[0_30px_70px_rgba(43,36,85,.18)]">
 
@@ -32,29 +29,23 @@ export function HeroIllustration() {
 
       </div>
 
-      {/* ========================= */}
       {/* Washi tape */}
-      {/* ========================= */}
 
       <div className="absolute left-10 top-3 h-10 w-28 rotate-[-18deg] rounded-md bg-yellow/80 opacity-90" />
 
-      <div className="absolute right-10 bottom-4 h-10 w-28 rotate-[18deg] rounded-md bg-teal/40 opacity-90" />
+      <div className="absolute bottom-4 right-10 h-10 w-28 rotate-[18deg] rounded-md bg-teal/40 opacity-90" />
 
-      {/* ========================= */}
-      {/* Sparkles */}
-      {/* ========================= */}
+      {/* Small accents */}
 
       <span className="absolute -right-2 top-8 text-3xl text-yellow">
         ✦
       </span>
 
-      <span className="absolute left-4 bottom-20 text-2xl text-pink">
+      <span className="absolute bottom-20 left-4 text-2xl text-pink">
         ✨
       </span>
 
-      {/* ========================= */}
-      {/* Handwritten label */}
-      {/* ========================= */}
+      {/* Handwritten caption */}
 
       <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-white px-6 py-3 shadow-lg">
 
@@ -169,7 +160,6 @@ export function HeroIllustration() {
 //     </div>
 //   );
 // }
-import mentorImage from "@/app/images/linda-teaching.jpg";
 
 export function LearnIllustration() {
   return (

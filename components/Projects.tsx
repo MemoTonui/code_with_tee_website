@@ -9,7 +9,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="bg-pink py-20 text-white sm:py-28">
+    <section className="bg-dark py-20 text-white sm:py-28">
       <div className="container-wide">
         <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
           <div>

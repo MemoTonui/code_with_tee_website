@@ -14,7 +14,9 @@ const config: Config = {
         cream: "#FFFDF7",
         peach: "#FFE8D7",
         blue: "#DCEBFF",
-        teal: "#61C4CC"
+        teal: "#61C4CC",
+        dark: "#17233C"
+
       },
       boxShadow: {
         card: "0 12px 30px rgba(43,36,85,.08)"

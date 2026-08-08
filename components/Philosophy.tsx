@@ -9,17 +9,17 @@ const steps = [
 
 export default function Philosophy() {
   return (
-    <section id="journey" className="bg-yellow py-20 sm:py-28">
+    <section id="journey" className=" py-20 sm:py-28">
       <div className="container-wide">
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-4 text-sm font-extrabold tracking-[0.18em] text-pink">THE CODEWITHTEE JOURNEY</p>
-          <h2 className="text-5xl font-extrabold leading-[1.02] sm:text-7xl">Learning does not always look like getting it right.</h2>
+          <h2 className="text-5xl font-extrabold  sm:text-7xl">Learning does not always look like getting it right.</h2>
           <p className="mt-5 text-lg leading-8 text-ink/65">Sometimes it looks like trying, getting stuck, asking why, and trying again.</p>
         </div>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-4  sm:grid-cols-2 lg:grid-cols-3">
           {steps.map(([number, title, text, icon]) => (
-            <div key={number} className="rounded-3xl bg-white p-7">
+            <div key={number} className="rounded-3xl shadow-md bg-cream/10 p-7">
               <div className="flex items-center justify-between">
                 <span className="font-extrabold text-pink">{number}</span>
                 <span className="text-3xl">{icon}</span>

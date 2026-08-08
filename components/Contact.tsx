@@ -72,7 +72,7 @@ export default function Contact() {
 
           {/* Form */}
 
-          <div className="rounded-[36px] border border-black/5 bg-white p-10 shadow-[0_20px_80px_rgba(0,0,0,.08)]">
+          <div className="rounded-[36px] border border-black/5 bg-cream/10 p-10 shadow-[0_20px_80px_rgba(0,0,0,.08)]">
 
             {!sent ? (
               <>
@@ -139,7 +139,7 @@ export default function Contact() {
 
                 <button
                   onClick={() => setSent(true)}
-                  className="mt-8 inline-flex w-full items-center justify-center gap-3 rounded-full bg-pink py-5 text-lg font-bold text-white transition hover:-translate-y-1 hover:shadow-xl"
+                  className="mt-8 inline-flex w-full items-center justify-center gap-3 rounded-full bg-dark py-5 text-lg font-bold text-white transition hover:-translate-y-1 hover:shadow-xl"
                 >
                   Start the Coding Journey
                   <ArrowRight size={20} />
@@ -149,9 +149,7 @@ export default function Contact() {
             ) : (
               <div className="flex min-h-[550px] flex-col items-center justify-center text-center">
 
-                <div className="text-7xl">
-                  🎉
-                </div>
+               
 
                 <h3 className="mt-6 text-4xl font-extrabold text-ink">
                   You're all set!
