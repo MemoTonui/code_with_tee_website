@@ -27,9 +27,9 @@ export default function Contact() {
     >
       {/* Decorative blobs */}
 
-      <div className="absolute left-[-180px] top-10 h-96 w-96 rounded-full bg-mint/40 blur-3xl" />
+      <div className="absolute left-[-180px] top-10 h-96 w-96 rounded-full blur-3xl" />
 
-      <div className="absolute right-[-120px] bottom-0 h-80 w-80 rounded-full bg-yellow/20 blur-3xl" />
+      <div className="absolute right-[-120px] bottom-0 h-80 w-80 rounded-full blur-3xl" />
 
       <div className="container-wide relative z-10">
 
@@ -230,7 +230,7 @@ function InfoCard({
   text: string;
 }) {
   return (
-    <div className="rounded-[20px] border border-black/5 bg-cream p-4 flex flex-row gap-2 transition hover:-translate-y-2 hover:shadow-xl">
+    <div className="rounded-[20px] border border-black/5 p-4 flex flex-row gap-2 transition hover:-translate-y-2 hover:shadow-xl">
 
       <div className=" flex h-14 w-14 items-center justify-center rounded-full bg-pink text-white">
 

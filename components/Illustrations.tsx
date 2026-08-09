@@ -1,238 +1,235 @@
 import heroImage from "@/app/images/linda2.jpg";
 import mentorImage from "@/app/images/linda-teaching.jpg";
 
+
 export function HeroIllustration() {
   return (
-    <div className="relative mx-auto w-full max-w-[640px] lg:translate-y-6">
+    <div className="pointer-events-none absolute inset-y-0 right-0 w-[52%] lg:w-[53%]">
+      {/* Yellow offset shape */}
+      <div
+        className="absolute right-[-1.5rem] top-[5%] h-[90%] w-full bg-yellow"
+        style={{
+          borderRadius: "45% 0 0 45% / 28% 0 0 72%",
+        }}
+      />
 
-      {/* Soft background glow */}
+      {/* Soft pink accent */}
+      <div
+        className="absolute right-[1.5rem] top-[2%] h-[92%] w-full bg-pink/15"
+        style={{
+          borderRadius: "45% 0 0 45% / 28% 0 0 72%",
+        }}
+      />
 
-      <div className="absolute inset-6 -z-30 rounded-[45%_55%_50%_50%/40%_58%_42%_60%] bg-mint/25 blur-2xl" />
-
-      {/* Scrapbook layer 1 */}
-
-      <div className="absolute inset-0 -rotate-6 rounded-[42px] bg-yellow/60 shadow-md" />
-
-      {/* Scrapbook layer 2 */}
-
-      <div className="absolute inset-0 rotate-3 rounded-[42px] bg-pink/15 shadow-md" />
-
-      {/* Main photograph */}
-
-      <div className="relative overflow-hidden rounded-[44px] border-[8px] border-white bg-white shadow-[0_30px_70px_rgba(43,36,85,.18)]">
-
+      {/* Main photo */}
+      <div
+        className="
+          absolute
+          inset-y-0
+          right-0
+          w-full
+          overflow-hidden
+          bg-teal
+          shadow-[-20px_30px_70px_rgba(43,36,85,.16)]
+        "
+        style={{
+          borderRadius: "45% 0 0 45% / 28% 0 0 72%",
+        }}
+      >
         <img
           src={heroImage.src}
-          alt="Linda teaching children programming"
-          className="aspect-[4/5] w-full object-cover"
+          alt="Tutor teaching children programming"
+          className="h-full w-full object-cover"
         />
-
       </div>
 
-      {/* Washi tape */}
+      {/* Yellow tape */}
+      <div
+        className="
+          absolute
+          left-[13%]
+          top-[8%]
+          z-20
+          h-12
+          w-32
+          rotate-[-18deg]
+          bg-yellow/90
+          shadow-sm
+        "
+      />
 
-      <div className="absolute left-10 top-3 h-10 w-28 rotate-[-18deg] rounded-md bg-yellow/80 opacity-90" />
-
-      <div className="absolute bottom-4 right-10 h-10 w-28 rotate-[18deg] rounded-md bg-teal/40 opacity-90" />
-
-      {/* Small accents */}
-
-      <span className="absolute -right-2 top-8 text-3xl text-yellow">
+      {/* Sparkle */}
+      <span className="absolute right-[5%] top-[20%] z-30 text-5xl text-yellow">
         ✦
       </span>
 
-      <span className="absolute bottom-20 left-4 text-2xl text-pink">
-        ✨
+      {/* Teal doodle */}
+      <span className="absolute bottom-[18%] right-[3%] z-30 rotate-12 text-5xl text-teal">
+        〰
       </span>
 
-      {/* Handwritten caption */}
+      {/* Pink doodle */}
+      <span className="absolute bottom-[32%] left-[7%] z-30 rotate-[-15deg] text-4xl text-pink">
+        〰
+      </span>
 
-      <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-white px-6 py-3 shadow-lg">
-
+      {/* Caption */}
+      <div
+        className="
+          absolute
+          bottom-[8%]
+          left-[8%]
+          z-40
+          max-w-[270px]
+          rotate-[-2deg]
+          rounded-2xl
+          bg-white
+          px-6
+          py-4
+          shadow-[0_15px_35px_rgba(43,36,85,.18)]
+        "
+      >
         <p
-          className="text-sm font-semibold text-ink"
-          style={{
-            fontFamily: "Caveat, cursive",
-            fontSize: "1.3rem",
-          }}
-        >
-          Learning together 💛
-        </p>
-
-      </div>
-
-    </div>
-  );
-}
-// export function HeroIllustration() {
-//   return (
-//     <div className="relative mx-auto h-[440px] w-full max-w-[590px] sm:h-[530px]">
-//       <div className="absolute left-[5%] top-[8%] h-[80%] w-[88%] bg-mint blob" />
-//       <div className="absolute left-[6%] top-[8%] text-5xl text-pink">✦</div>
-//       <div className="absolute right-[6%] top-[12%] rotate-12 text-4xl text-yellow">⌁</div>
-//       <div className="absolute bottom-[12%] left-[5%] h-20 w-20 rounded-full bg-yellow" />
-//       <div className="absolute bottom-[7%] right-[5%] h-28 w-28 rounded-full bg-blue" />
-
-//       <div className="absolute bottom-[7%] left-[27%] h-64 w-32 rounded-t-[55px] bg-pink" />
-//       <div className="absolute bottom-[48%] left-[29%] h-32 w-32 rounded-full bg-[#9A5B40]" />
-//       <div className="absolute bottom-[56%] left-[27%] h-10 w-36 rounded-t-full bg-ink" />
-
-//       <div className="absolute bottom-[15%] left-[12%] h-44 w-28 rounded-t-[55px] bg-teal" />
-//       <div className="absolute bottom-[51%] left-[12%] h-28 w-28 rounded-full bg-[#70442F]" />
-//       <div className="absolute bottom-[59%] left-[10%] h-9 w-32 rounded-t-full bg-ink" />
-
-//       <div className="absolute bottom-[10%] right-[13%] h-56 w-32 rounded-t-[55px] bg-yellow" />
-//       <div className="absolute bottom-[50%] right-[13%] h-30 w-30 rounded-full bg-[#B87553]" />
-//       <div className="absolute bottom-[58%] right-[11%] h-9 w-36 rounded-t-full bg-ink" />
-
-//       <div className="absolute bottom-[22%] left-[35%] h-24 w-52 rounded-2xl border-4 border-ink bg-white shadow-[6px_6px_0_#2B2455]">
-//         <div className="p-3 font-mono text-[11px] font-bold leading-5">
-//           <span className="text-pink">if</span> idea <span className="text-teal">{"{"}</span>
-//           <br />
-//           <span className="ml-4 text-purple">build();</span>
-//           <br />
-//           <span className="text-teal">{"}"}</span>
-//         </div>
-//       </div>
-
-//       <div className="absolute bottom-[42%] left-[42%] flex h-14 w-14 items-center justify-center rounded-full bg-yellow text-2xl ring-4 ring-white">💡</div>
-//       <div className="absolute right-[3%] bottom-[38%] rounded-2xl bg-white px-5 py-3 text-xs font-bold shadow-card">I made this! 🎉</div>
-//     </div>
-//   );
-// }
-
-// import heroImage from "@/app/images/problem-solving.png";
-// export function HeroIllustration() {
-//   return (
-//     <div className="relative mx-auto h-[440px] w-full max-w-[590px] sm:h-[530px]">
-
-//       {/* Background blob */}
-//       <div className="absolute left-[5%] top-[8%] h-[80%] w-[88%] bg-mint blob" />
-
-//       {/* Decorative elements */}
-//       <div className="absolute left-[6%] top-[8%] text-5xl text-pink">
-//         ✦
-//       </div>
-
-//       <div className="absolute right-[6%] top-[12%] rotate-12 text-4xl text-yellow">
-//         ⌁
-//       </div>
-
-//       {/* Hero illustration */}
-//       <img
-//         src={heroImage.src}
-//         alt="Children learning to code with CodeWithTee"
-//         className="absolute inset-0 z-20 h-full w-full object-contain"
-//       />
-
-//       {/* Code card */}
-//       <div className="absolute top-[20%] left-[0%] z-20 h-24 w-52 rounded-2xl border-4 border-ink bg-white shadow-[6px_6px_0_#2B2455]">
-//         <div className="p-3 font-mono text-[11px] font-bold leading-5">
-//           <span className="text-pink">if</span> idea{" "}
-//           <span className="text-teal">{"{"}</span>
-//           <br />
-
-//           <span className="ml-4 text-purple">
-//             build();
-//           </span>
-
-//           <br />
-
-//           <span className="text-teal">{"}"}</span>
-//         </div>
-//       </div>
-
-//       {/* Lightbulb */}
-//       <div className="absolute bottom-[72%] left-[82%] z-30 flex h-14 w-14 items-center justify-center rounded-full bg-yellow text-2xl ring-4 ring-white">
-//         💡
-//       </div>
-
-//       {/* Speech bubble */}
-//       <div className="absolute right-[3%] bottom-[38%] z-30 rounded-2xl bg-white px-5 py-3 text-xs font-bold shadow-card">
-//         I made this! 🎉
-//       </div>
-
-//       {/* Floating accents */}
-//       <div className="absolute bottom-[12%] left-[5%] h-20 w-20 rounded-full bg-yellow/80" />
-
-//       <div className="absolute bottom-[7%] right-[5%] h-28 w-28 rounded-full bg-blue/80" />
-
-//     </div>
-//   );
-// }
-
-export function LearnIllustration() {
-  return (
-    <div className="relative mx-auto w-full max-w-[580px]">
-
-      {/* Background accent */}
-      <div className="absolute -left-10 top-12 h-64 w-64 rounded-full bg-pink/10 blur-3xl" />
-      <div className="absolute -right-10 bottom-12 h-64 w-64 rounded-full bg-teal/15 blur-3xl" />
-
-      {/* Main card */}
-      <div className="relative rounded-[36px] bg-white p-5 shadow-[0_35px_80px_rgba(43,36,85,.14)]">
-
-        <div className="overflow-hidden rounded-[28px]">
-
-          <img
-            src={mentorImage.src}
-            alt="Tutor helping children learn programming"
-            className="aspect-[4/5] w-full object-cover object-center"
-          />
-
-        </div>
-
-      </div>
-
-      {/* Floating badge */}
-
-      <div className="absolute -right-4 top-8 rounded-full bg-yellow px-5 py-3 shadow-xl">
-
-        <p className="text-xs font-bold uppercase tracking-wider">
-          Mentor Led
-        </p>
-
-      </div>
-
-      {/* Bottom caption */}
-
-      <div className="absolute -bottom-6 left-10 rounded-2xl bg-white px-6 py-4 shadow-xl">
-
-        <p
-          className="text-lg font-semibold text-ink"
+          className="text-lg font-semibold leading-tight text-ink"
           style={{
             fontFamily: "Caveat, cursive",
           }}
         >
           Helping every child discover what they're capable of 💛
         </p>
-
       </div>
+    </div>
+  );
+}
+
+
+/* ================================================= */
+/* WHAT IS CODEWITHTEE IMAGE                         */
+/* ================================================= */
+
+export function LearnIllustration() {
+  return (
+    <div className="relative mx-auto w-full max-w-[560px] px-6 py-10">
+
+      {/* Soft organic background */}
+
+      <div className="absolute left-1/2 top-1/2 h-[85%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-[48%_52%_55%_45%/45%_40%_60%_55%] bg-teal/10" />
+
+      {/* Yellow organic shape */}
+
+      <div className="absolute -bottom-4 -left-2 h-28 w-28 rounded-[58%_42%_40%_60%] bg-yellow/70" />
+
+      {/* Pink organic shape */}
+
+      <div className="absolute -right-4 top-8 h-24 w-24 rounded-[45%_55%_60%_40%] bg-pink/20" />
+
+      {/* Main organic photo */}
+
+      <div
+        className="
+          relative
+          overflow-hidden
+          rounded-[48%_52%_45%_55%/42%_45%_55%_58%]
+          border-[7px]
+          border-white
+          shadow-[0_30px_70px_rgba(43,36,85,.16)]
+        "
+      >
+        <img
+          src={mentorImage.src}
+          alt="CodeWithTee mentor teaching"
+          className="
+            aspect-[4/5]
+            w-full
+            object-cover
+            object-[52%_35%]
+          "
+        />
+
+        {/* subtle image overlay */}
+
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/10 via-transparent to-transparent" />
+      </div>
+
+      {/* Mentor badge */}
+
+      <div className="absolute right-0 top-[22%] rotate-6 rounded-2xl bg-yellow px-5 py-4 shadow-[5px_6px_0_rgba(43,36,85,.15)]">
+        <p className="text-xs font-black uppercase tracking-[0.15em] text-ink">
+          Mentor-led
+        </p>
+
+        <p className="mt-1 text-sm font-bold text-ink">
+          Learning 💛
+        </p>
+      </div>
+
+      {/* Handwritten note */}
+
+      <div className="absolute bottom-4 left-0 -rotate-3 rounded-xl bg-white px-5 py-3 shadow-lg">
+        <p
+          className="text-xl font-semibold text-ink"
+          style={{
+            fontFamily: "Caveat, cursive",
+          }}
+        >
+          "You can do this!" ✨
+        </p>
+      </div>
+
+      {/* Tiny decorative stars */}
+
+      <span className="absolute left-2 top-16 text-3xl text-pink">
+        ✦
+      </span>
+
+      <span className="absolute bottom-20 right-3 text-2xl text-teal">
+        ✦
+      </span>
 
     </div>
   );
 }
 
-export function AreaIllustration({ kind }: { kind: string }) {
+
+/* ================================================= */
+/* AREA ILLUSTRATION                                 */
+/* ================================================= */
+
+export function AreaIllustration({
+  kind,
+}: {
+  kind: string;
+}) {
   const symbol: Record<string, string> = {
     code: "{ }",
     create: "✦",
     solve: "?",
     mentor: "♥",
     debug: "🐛",
-    robotics: "⚙"
+    robotics: "⚙",
   };
 
   return (
     <div className="relative h-[280px] overflow-hidden">
-      <div className="absolute left-1/2 top-[12%] h-52 w-52 -translate-x-1/2 rounded-full bg-white/70" />
-      <div className="absolute left-1/2 top-[24%] flex h-36 w-36 -translate-x-1/2 items-center justify-center rounded-[44%_56%_58%_42%/58%_43%_57%_42%] bg-white text-5xl font-extrabold text-ink shadow-card">
+
+      <div className="absolute left-1/2 top-[12%] h-52 w-52 -translate-x-1/2 rounded-full bg-teal/10" />
+
+      <div className="absolute left-1/2 top-[24%] flex h-36 w-36 -translate-x-1/2 items-center justify-center rounded-[44%_56%_58%_42%/58%_43%_57%_42%] bg-white text-5xl font-extrabold text-navy shadow-card">
         {symbol[kind]}
       </div>
-      <div className="absolute left-[18%] top-[25%] text-3xl text-pink">✦</div>
-      <div className="absolute right-[18%] top-[38%] text-3xl text-yellow">⌁</div>
-      <div className="absolute bottom-[12%] left-[19%] h-20 w-20 rounded-full bg-yellow/80" />
-      <div className="absolute bottom-[13%] right-[18%] h-14 w-14 rounded-full bg-teal/80" />
+
+      <div className="absolute left-[18%] top-[25%] text-3xl text-pink">
+        ✦
+      </div>
+
+      <div className="absolute right-[18%] top-[38%] text-3xl text-yellow">
+        ⌁
+      </div>
+
+      <div className="absolute bottom-[12%] left-[19%] h-20 w-20 rounded-full bg-yellow/70" />
+
+      <div className="absolute bottom-[13%] right-[18%] h-14 w-14 rounded-full bg-teal/70" />
+
     </div>
   );
 }

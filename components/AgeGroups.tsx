@@ -7,7 +7,7 @@ const groups = [
 
 export default function AgeGroups() {
   return (
-    <section id="ages" className="bg-cream py-20 sm:py-28">
+    <section id="ages" className=" py-20 sm:py-28">
       <div className="container-wide">
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-4 text-sm font-extrabold tracking-[0.18em] text-pink">GROWING WITH CODEWITHTEE</p>

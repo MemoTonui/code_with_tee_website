@@ -3,11 +3,11 @@ import { Code2, Rocket, Lightbulb } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="relative overflow-hidden bg-cream py-20 sm:py-28">
+    <section id="about" className="relative overflow-hidden py-20 sm:py-28">
 
       {/* Decorative Background */}
-      <div className="absolute -left-32 top-24 h-80 w-80 rounded-full bg-pink/10 blur-3xl" />
-      <div className="absolute -right-20 bottom-0 h-96 w-96 rounded-full bg-mint/20 blur-3xl" />
+      <div className="absolute -left-32 top-24 h-80 w-80 rounded-full blur-3xl" />
+      <div className="absolute -right-20 bottom-0 h-96 w-96 rounded-full blur-3xl" />
 
       <div className="container-wide grid items-center gap-20 lg:grid-cols-[1fr_0.95fr]">
 

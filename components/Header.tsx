@@ -8,7 +8,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="bg-pink py-2 text-center text-[11px] font-semibold tracking-[0.15em] text-white">
+      <div className="bg-dark py-2 text-center text-[11px] font-semibold tracking-[0.15em] text-white">
         ✦ LEARN • CREATE • BUILD ✦
       </div>
 

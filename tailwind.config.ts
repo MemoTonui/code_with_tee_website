@@ -6,9 +6,9 @@ const config: Config = {
     extend: {
       fontFamily: { poppins: ["var(--font-poppins)", "sans-serif"] },
       colors: {
-        ink: "#5F6675",
+        ink: "#17233C",
         pink: "#E91E63",
-        mint: "#C6F0E4",
+        mint: "#61C4CC",
         yellow: "#FFD447",
         purple: "#44357D",
         cream: "#FFFDF7",

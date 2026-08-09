@@ -2,7 +2,7 @@ import { LearnIllustration } from "./Illustrations";
 
 export default function WhatIsCodeWithTee() {
   return (
-    <section className="relative overflow-hidden bg-cream py-24 sm:py-32">
+    <section className="relative overflow-hidden py-24 sm:py-32">
 
       {/* Very subtle background decoration */}
 

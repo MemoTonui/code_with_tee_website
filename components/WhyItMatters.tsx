@@ -9,7 +9,7 @@ const benefits = [
 
 export default function WhyItMatters() {
   return (
-    <section className="bg-mint py-20 sm:py-28">
+    <section className="bg-teal py-20 sm:py-28">
       <div className="container-wide grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
         <div>
           <p className="mb-4 text-sm font-extrabold tracking-[0.18em] text-pink">WHY IT MATTERS</p>
