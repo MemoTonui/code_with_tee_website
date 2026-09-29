@@ -1,171 +1,106 @@
-import { ArrowRight } from "lucide-react";
+"use client";
+
+import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight, Code2, Cpu } from "lucide-react";
+
 import heroImage from "@/app/images/linda2.jpg";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[calc(100vh-82px)] overflow-hidden bg-cream"
+      className="relative min-h-[calc(100vh-82px)] overflow-hidden bg-dark"
     >
-      {/* =========================================================
-          HERO IMAGE
-      ========================================================= */}
-      <img
-        src={heroImage.src}
-        alt="Young people learning technology"
-        className="
-          absolute
-          inset-0
-          h-full
-          w-full
-          object-cover
-          object-center
-        "
+      {/* Hero image */}
+      <Image
+        src={heroImage}
+        alt="Tutor teaching children programming"
+        fill
+        priority
+        className="object-cover object-center"
       />
 
-      {/* =========================================================
-          IMAGE OVERLAY
-      ========================================================= */}
-      <div
-        className="
-          absolute
-          inset-0
-          bg-gradient-to-r
-          from-cream
-          via-cream/95
-          to-transparent
-          lg:via-cream/90
-        "
-      />
+      {/* Dark/cream editorial overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/85 to-dark/20" />
 
-      {/* =========================================================
-          CONTENT
-      ========================================================= */}
-      <div className="container-wide relative z-10">
-        <div className="flex min-h-[calc(100vh-82px)] items-center py-20 lg:py-24">
-          <div className="max-w-2xl">
+      {/* Subtle cream wash on the left */}
+      <div className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-cream/95 via-cream/75 to-transparent lg:w-[72%]" />
 
-            {/* Eyebrow */}
-            <p
-              className="
-                mb-7
-                text-xs
-                font-bold
-                uppercase
-                tracking-[0.18em]
-                text-ink/50
-              "
+
+      {/* Content */}
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-82px)] max-w-7xl items-center px-6 py-20 sm:px-8 lg:px-12">
+        <div className="max-w-3xl">
+          {/* Eyebrow */}
+          <div className="mb-7 flex items-center gap-3">
+            <span className="h-3 w-3 rounded-full bg-pink" />
+            <span className="text-sm font-semibold uppercase tracking-[0.18em] text-ink">
+              Software Engineering & Robotics
+            </span>
+          </div>
+
+          {/* Main heading */}
+          <h1 className="max-w-3xl text-[clamp(4rem,8vw,7.5rem)] font-black leading-[0.86] tracking-[-0.035em] text-ink">
+            Learn.
+            <br />
+           Solve.
+            <br />
+            <span className="text-pink">Repeat.</span>
+          </h1>
+
+          {/* Supporting copy */}
+          <p className="mt-8 max-w-xl text-lg leading-8 text-ink/75 sm:text-xl">
+            Technology is better learned by working with it. LSR teaches
+            children and teenagers aged 6–18 how to build software, work with
+            electronics and make ideas actually work.
+          </p>
+
+          {/* CTAs */}
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="#contact"
+              className="inline-flex h-14 items-center justify-center gap-3 rounded-full bg-pink px-8 text-base font-bold text-white transition-transform duration-200 hover:-translate-y-0.5"
             >
-              Curious minds · Ages 6–18
-            </p>
+              Start learning
+              <ArrowRight size={19} strokeWidth={2.5} />
+            </Link>
 
-            {/* Headline */}
-            <h1
-              className="
-                text-[68px]
-                font-black
-                leading-[0.85]
-                text-ink
-                tracking-[-0.03em]
-                sm:text-[84px]
-                md:text-[96px]
-                lg:text-[108px]
-                xl:text-[116px]
-              "
+            <Link
+              href="#learning"
+              className="inline-flex h-14 items-center justify-center rounded-full bg-ink px-8 text-base font-bold text-white transition-transform duration-200 hover:-translate-y-0.5"
             >
-              The 
-              <span className="text-yellow"> Future</span> 
-              <br />
-              doesn’t wait.
-              <br />
-              <span className="text-pink">Build it.</span>
-            </h1>
+              See how it works
+            </Link>
+          </div>
 
-            {/* Description */}
-            <p
-              className="
-                mt-8
-                max-w-lg
-                text-base
-                leading-7
-                text-ink/65
-                sm:text-lg
-                sm:leading-8
-              "
-            >
-              LSR helps young people learn software engineering and robotics
-              by making things, solving problems, and bringing their ideas to
-              life.
-            </p>
-
-            {/* Buttons */}
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="#software-engineering"
-                className="
-                  group
-                  inline-flex
-                  h-14
-                  items-center
-                  justify-center
-                  gap-3
-                  rounded-full
-                  bg-ink
-                  px-7
-                  text-sm
-                  font-bold
-                  text-white
-                  shadow-[0_10px_25px_rgba(17,17,17,0.12)]
-                  transition-all
-                  duration-300
-                  hover:-translate-y-0.5
-                  hover:bg-pink
-                "
-              >
-                Start Learning
-
-                <ArrowRight
-                  size={17}
-                  strokeWidth={2.5}
-                  className="transition-transform duration-300 group-hover:translate-x-1"
-                />
-              </Link>
-
-              <Link
-                href="#robotics"
-                className="
-                  inline-flex
-                  h-14
-                  items-center
-                  justify-center
-                  rounded-full
-                  bg-white/90
-                  px-7
-                  text-sm
-                  font-bold
-                  text-ink
-                  shadow-[0_10px_25px_rgba(17,17,17,0.08)]
-                  backdrop-blur-sm
-                  transition-all
-                  duration-300
-                  hover:-translate-y-0.5
-                  hover:bg-yellow
-                "
-              >
-                Explore robotics
-              </Link>
+          {/* Small technical metadata */}
+          <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-ink/65">
+            <div className="flex items-center gap-2">
+              <Code2 size={17} strokeWidth={2} />
+              <span>Ages 6–18</span>
             </div>
 
-            {/* Small supporting detail */}
-            <div className="mt-9 flex items-center gap-3 text-xs font-semibold text-ink/40">
-              <span>Software Engineering</span>
-              <span className="h-1 w-1 rounded-full bg-pink" />
-              <span>Robotics</span>
+            <div className="flex items-center gap-2">
+              <Cpu size={17} strokeWidth={2} />
+              <span>Project-based learning</span>
             </div>
+
+            <span className="hidden h-1 w-1 rounded-full bg-ink/30 sm:block" />
+
+            <span>Software · Robotics</span>
           </div>
         </div>
       </div>
+
+      {/* Technical annotation */}
+      <div className="absolute bottom-8 right-8 z-10 hidden items-center gap-3 text-white/80 lg:flex">
+        <span className="font-mono text-[11px] uppercase tracking-[0.18em]">
+          learn → build → test → improve
+        </span>
+        <span className="h-px w-16 bg-white/40" />
+      </div>
+
+     
     </section>
   );
 }
