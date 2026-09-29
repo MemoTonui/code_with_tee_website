@@ -1,11 +1,9 @@
 import heroImage from "@/app/images/linda2.jpg";
 import mentorImage from "@/app/images/linda-teaching.jpg";
 
-
 export function HeroIllustration() {
   return (
     <div className="pointer-events-none absolute inset-y-0 right-0 w-[52%] lg:w-[53%]">
-      {/* Yellow offset shape */}
       <div
         className="absolute right-[-1.5rem] top-[5%] h-[90%] w-full bg-yellow"
         style={{
@@ -13,7 +11,6 @@ export function HeroIllustration() {
         }}
       />
 
-      {/* Soft pink accent */}
       <div
         className="absolute right-[1.5rem] top-[2%] h-[92%] w-full bg-pink/15"
         style={{
@@ -21,7 +18,6 @@ export function HeroIllustration() {
         }}
       />
 
-      {/* Main photo */}
       <div
         className="
           absolute
@@ -38,12 +34,11 @@ export function HeroIllustration() {
       >
         <img
           src={heroImage.src}
-          alt="Tutor teaching children programming"
+          alt="Tee teaching children programming"
           className="h-full w-full object-cover"
         />
       </div>
 
-      {/* Yellow tape */}
       <div
         className="
           absolute
@@ -58,22 +53,6 @@ export function HeroIllustration() {
         "
       />
 
-      {/* Sparkle */}
-      <span className="absolute right-[5%] top-[20%] z-30 text-5xl text-yellow">
-        ✦
-      </span>
-
-      {/* Teal doodle */}
-      <span className="absolute bottom-[18%] right-[3%] z-30 rotate-12 text-5xl text-teal">
-        〰
-      </span>
-
-      {/* Pink doodle */}
-      <span className="absolute bottom-[32%] left-[7%] z-30 rotate-[-15deg] text-4xl text-pink">
-        〰
-      </span>
-
-      {/* Caption */}
       <div
         className="
           absolute
@@ -95,35 +74,21 @@ export function HeroIllustration() {
             fontFamily: "Caveat, cursive",
           }}
         >
-          Helping every child discover what they're capable of 💛
+          Build it. Break it. Figure it out.
         </p>
       </div>
     </div>
   );
 }
 
-
-/* ================================================= */
-/* WHAT IS CODEWITHTEE IMAGE                         */
-/* ================================================= */
-
 export function LearnIllustration() {
   return (
     <div className="relative mx-auto w-full max-w-[560px] px-6 py-10">
-
-      {/* Soft organic background */}
-
       <div className="absolute left-1/2 top-1/2 h-[85%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-[48%_52%_55%_45%/45%_40%_60%_55%] bg-teal/10" />
-
-      {/* Yellow organic shape */}
 
       <div className="absolute -bottom-4 -left-2 h-28 w-28 rounded-[58%_42%_40%_60%] bg-yellow/70" />
 
-      {/* Pink organic shape */}
-
       <div className="absolute -right-4 top-8 h-24 w-24 rounded-[45%_55%_60%_40%] bg-pink/20" />
-
-      {/* Main organic photo */}
 
       <div
         className="
@@ -137,21 +102,12 @@ export function LearnIllustration() {
       >
         <img
           src={mentorImage.src}
-          alt="CodeWithTee mentor teaching"
-          className="
-            aspect-[4/5]
-            w-full
-            object-cover
-            object-[52%_35%]
-          "
+          alt="Tee teaching"
+          className="aspect-[4/5] w-full object-cover object-[52%_35%]"
         />
-
-        {/* subtle image overlay */}
 
         <div className="absolute inset-0 bg-gradient-to-t from-ink/10 via-transparent to-transparent" />
       </div>
-
-      {/* Mentor badge */}
 
       <div className="absolute right-0 top-[22%] rotate-6 rounded-2xl bg-yellow px-5 py-4 shadow-[5px_6px_0_rgba(43,36,85,.15)]">
         <p className="text-xs font-black uppercase tracking-[0.15em] text-ink">
@@ -159,11 +115,9 @@ export function LearnIllustration() {
         </p>
 
         <p className="mt-1 text-sm font-bold text-ink">
-          Learning 💛
+          Live sessions
         </p>
       </div>
-
-      {/* Handwritten note */}
 
       <div className="absolute bottom-4 left-0 -rotate-3 rounded-xl bg-white px-5 py-3 shadow-lg">
         <p
@@ -172,28 +126,12 @@ export function LearnIllustration() {
             fontFamily: "Caveat, cursive",
           }}
         >
-          "You can do this!" ✨
+          "Let's figure it out."
         </p>
       </div>
-
-      {/* Tiny decorative stars */}
-
-      <span className="absolute left-2 top-16 text-3xl text-pink">
-        ✦
-      </span>
-
-      <span className="absolute bottom-20 right-3 text-2xl text-teal">
-        ✦
-      </span>
-
     </div>
   );
 }
-
-
-/* ================================================= */
-/* AREA ILLUSTRATION                                 */
-/* ================================================= */
 
 export function AreaIllustration({
   kind,
@@ -202,34 +140,28 @@ export function AreaIllustration({
 }) {
   const symbol: Record<string, string> = {
     code: "{ }",
-    create: "✦",
+    create: "</>",
     solve: "?",
-    mentor: "♥",
-    debug: "🐛",
+    mentor: "01",
+    debug: "!",
     robotics: "⚙",
   };
 
   return (
     <div className="relative h-[280px] overflow-hidden">
-
       <div className="absolute left-1/2 top-[12%] h-52 w-52 -translate-x-1/2 rounded-full bg-teal/10" />
 
       <div className="absolute left-1/2 top-[24%] flex h-36 w-36 -translate-x-1/2 items-center justify-center rounded-[44%_56%_58%_42%/58%_43%_57%_42%] bg-white text-5xl font-extrabold text-navy shadow-card">
         {symbol[kind]}
       </div>
 
-      <div className="absolute left-[18%] top-[25%] text-3xl text-pink">
-        ✦
-      </div>
+      <div className="absolute left-[18%] top-[25%] h-3 w-3 rounded-full bg-pink" />
 
-      <div className="absolute right-[18%] top-[38%] text-3xl text-yellow">
-        ⌁
-      </div>
+      <div className="absolute right-[18%] top-[38%] h-4 w-4 rounded-full bg-yellow" />
 
       <div className="absolute bottom-[12%] left-[19%] h-20 w-20 rounded-full bg-yellow/70" />
 
       <div className="absolute bottom-[13%] right-[18%] h-14 w-14 rounded-full bg-teal/70" />
-
     </div>
   );
 }

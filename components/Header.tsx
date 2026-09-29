@@ -1,53 +1,97 @@
- "use client";
+"use client";
 
+import Image from "next/image";
 import { useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import lsrLogo from "@/app/images/lsr-logo.png";
+
+const links = [
+  { label: "Software Engineering", href: "#software-engineering" },
+  { label: "Robotics", href: "#robotics" },
+  { label: "Learning", href: "#learning" },
+  { label: "Projects", href: "#projects" },
+  { label: "About", href: "#about" },
+];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <>
-      <div className="bg-dark py-2 text-center text-[11px] font-semibold tracking-[0.15em] text-white">
-        ✦ LEARN • CREATE • BUILD ✦
-      </div>
+    <header className="sticky top-0 z-50 bg-cream/95 backdrop-blur-md">
+      <div className="container-wide flex h-[82px] items-center justify-between">
+        {/* Logo */}
+        <a
+          href="#home"
+          className="flex shrink-0 items-center"
+          aria-label="LSR — Learn. Solve. Repeat."
+        >
+          <Image
+  src={lsrLogo}
+  alt="LSR"
+  className="w-[145px] sm:w-[220px] h-auto"
+/>
+        </a>
 
-      <header className="sticky top-0 z-50 border-b border-ink/10  backdrop-blur-md">
-        <div className="container-wide flex h-[78px] items-center justify-between">
-          <a href="#home" className="text-2xl font-extrabold tracking-[-0.06em] text-ink">
-            Code<span className="text-pink">With</span>Tee<span className="text-yellow">✦</span>
-          </a>
-
-          <nav className="hidden items-center gap-8 md:flex">
-            <a href="#home" className="text-sm font-semibold text-ink/70 hover:text-pink">Home</a>
-            <a href="#about" className="text-sm font-semibold text-ink/70 hover:text-pink">About</a>
-            <a href="#explore" className="flex items-center gap-1 text-sm font-semibold text-ink/70 hover:text-pink">
-              What we explore <ChevronDown size={15} />
+        {/* Desktop navigation */}
+        <nav className="hidden items-center gap-7 lg:flex">
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm font-semibold text-ink/70 transition-colors hover:text-ink"
+            >
+              {link.label}
             </a>
-            <a href="#ages" className="text-sm font-semibold text-ink/70 hover:text-pink">Age groups</a>
-          </nav>
+          ))}
+        </nav>
 
-          <a href="#contact" className="hidden rounded-full bg-yellow px-6 py-3 text-sm font-bold text-ink shadow-[3px_3px_0_#2B2455] md:block">
-            Let&apos;s build ✦
+        {/* Desktop CTA */}
+        <div className="hidden lg:block">
+          <a
+            href="#contact"
+            className="inline-flex items-center rounded-full bg-pink px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5"
+          >
+            Start Learning
           </a>
-
-          <button className="md:hidden" onClick={() => setOpen(!open)} aria-label="Menu">
-            {open ? <X /> : <Menu />}
-          </button>
         </div>
 
-        {open && (
-          <div className="border-t border-ink/10 bg-slate-50 px-5 py-5 md:hidden">
-            <div className="container-wide flex flex-col gap-5">
-              <a href="#home" onClick={() => setOpen(false)} className="font-semibold">Home</a>
-              <a href="#about" onClick={() => setOpen(false)} className="font-semibold">About</a>
-              <a href="#explore" onClick={() => setOpen(false)} className="font-semibold">What we explore</a>
-              <a href="#ages" onClick={() => setOpen(false)} className="font-semibold">Age groups</a>
-              <a href="#contact" onClick={() => setOpen(false)} className="w-fit rounded-full bg-dark px-5 py-3 font-bold">Let&apos;s build</a>
-            </div>
-          </div>
-        )}
-      </header>
-    </>
+        {/* Mobile menu button */}
+        <button
+          type="button"
+          onClick={() => setOpen((value) => !value)}
+          className="rounded-full border border-ink/10 p-2 lg:hidden"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+        >
+          {open ? <X size={22} /> : <Menu size={22} />}
+        </button>
+      </div>
+
+      {/* Mobile navigation */}
+      {open && (
+        <div className="bg-cream lg:hidden">
+          <nav className="container-wide flex flex-col py-5">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="py-4 text-base font-semibold"
+              >
+                {link.label}
+              </a>
+            ))}
+
+            <a
+              href="#contact"
+              onClick={() => setOpen(false)}
+              className="mt-5 inline-flex justify-center bg-pink px-6 py-3 font-bold text-white"
+            >
+              Start Learning
+            </a>
+          </nav>
+        </div>
+      )}
+    </header>
   );
 }

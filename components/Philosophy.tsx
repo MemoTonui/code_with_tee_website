@@ -1,31 +1,72 @@
-const steps = [
-  ["01", "Imagine", "What if...? Every project starts with a question, an idea, or a spark of curiosity.", "💭"],
-  ["02", "Explore", "How does this work? Children experiment, discover, and learn new tools.", "🔎"],
-  ["03", "Build", "Let’s make it real. Ideas become projects they can see, test, and share.", "🛠️"],
-  ["04", "Get stuck", "Something did not work? Good. That is where the real thinking begins.", "🐛"],
-  ["05", "Improve", "Debug, change, test, and try again until the idea becomes stronger.", "✨"],
-  ["06", "Create again", "The next idea is always waiting.", "🚀"]
-];
-
 export default function Philosophy() {
+  const steps = [
+    [
+      "01",
+      "Start with an idea",
+      "Maybe it's a game. Maybe it's a website. Maybe they don't know what they want to make yet.",
+    ],
+    [
+      "02",
+      "Try something",
+      "We write some code, change something and see what happens.",
+    ],
+    [
+      "03",
+      "Get stuck",
+      "This is normal. In fact, getting stuck is one of the most useful parts of learning to code.",
+    ],
+    [
+      "04",
+      "Ask why",
+      "Instead of just giving them the answer, we work through the problem together.",
+    ],
+    [
+      "05",
+      "Fix it",
+      "Test it. Change it. Break it again. Eventually, it works.",
+    ],
+    [
+      "06",
+      "Make the next thing",
+      "Once you've figured one problem out, there's usually another interesting one waiting.",
+    ],
+  ];
+
   return (
-    <section id="journey" className=" py-20 sm:py-28">
+    <section id="journey" className="py-20 sm:py-28">
       <div className="container-wide">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-4 text-sm font-extrabold tracking-[0.18em] text-pink">THE CODEWITHTEE JOURNEY</p>
-          <h2 className="text-5xl font-extrabold  sm:text-7xl">Learning does not always look like getting it right.</h2>
-          <p className="mt-5 text-lg leading-8 text-ink/65">Sometimes it looks like trying, getting stuck, asking why, and trying again.</p>
+        <div className="max-w-3xl">
+          <p className="mb-4 text-sm font-extrabold tracking-[0.18em] text-pink">
+            HOW LEARNING ACTUALLY LOOKS
+          </p>
+
+          <h2 className="text-5xl font-extrabold leading-[1.02] sm:text-7xl">
+            Coding rarely goes in a straight line.
+          </h2>
+
+          <p className="mt-5 max-w-2xl text-lg leading-8 text-ink/65">
+            A good session isn't one where everything works on the first try.
+            It's one where the student learns what to do when it doesn't.
+          </p>
         </div>
 
-        <div className="mt-12 grid gap-4  sm:grid-cols-2 lg:grid-cols-3">
-          {steps.map(([number, title, text, icon]) => (
-            <div key={number} className="rounded-3xl shadow-md bg-cream/10 p-7">
-              <div className="flex items-center justify-between">
-                <span className="font-extrabold text-pink">{number}</span>
-                <span className="text-3xl">{icon}</span>
-              </div>
-              <h3 className="mt-8 text-2xl font-extrabold">{title}</h3>
-              <p className="mt-3 leading-7 text-ink/65">{text}</p>
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {steps.map(([number, title, text]) => (
+            <div
+              key={number}
+              className="rounded-3xl bg-cream/50 p-7 shadow-sm"
+            >
+              <span className="font-extrabold text-pink">
+                {number}
+              </span>
+
+              <h3 className="mt-8 text-2xl font-extrabold">
+                {title}
+              </h3>
+
+              <p className="mt-3 leading-7 text-ink/65">
+                {text}
+              </p>
             </div>
           ))}
         </div>

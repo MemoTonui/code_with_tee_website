@@ -1,279 +1,171 @@
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Lightbulb,
-  Code2,
-} from "lucide-react";
-
-import { HeroIllustration } from "./Illustrations";
 import heroImage from "@/app/images/linda2.jpg";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-[calc(100vh-82px)] overflow-hidden bg-cream"
+    >
+      {/* =========================================================
+          HERO IMAGE
+      ========================================================= */}
+      <img
+        src={heroImage.src}
+        alt="Young people learning technology"
+        className="
+          absolute
+          inset-0
+          h-full
+          w-full
+          object-cover
+          object-center
+        "
+      />
 
-      {/* ========================= */}
-      {/* Background blobs */}
-      {/* ========================= */}
+      {/* =========================================================
+          IMAGE OVERLAY
+      ========================================================= */}
+      <div
+        className="
+          absolute
+          inset-0
+          bg-gradient-to-r
+          from-cream
+          via-cream/95
+          to-transparent
+          lg:via-cream/90
+        "
+      />
 
-      <div className="pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full blur-3xl" />
-
-      <div className="pointer-events-none absolute left-1/3 top-10 h-[500px] w-[500px] rounded-full blur-3xl" />
-
-      {/* ========================= */}
-      {/* Floating doodles */}
-      {/* ========================= */}
-
-      <div className="floating pointer-events-none absolute left-[5%] top-24 z-20 hidden text-pink lg:block">
-        <Lightbulb size={28} />
-      </div>
-
-      <div className="floating-delay pointer-events-none absolute right-[48%] top-28 z-20 hidden text-yellow lg:block">
-        <Code2 size={28} />
-      </div>
-
-      {/* ========================= */}
-      {/* HERO CONTENT */}
-      {/* ========================= */}
-
+      {/* =========================================================
+          CONTENT
+      ========================================================= */}
       <div className="container-wide relative z-10">
+        <div className="flex min-h-[calc(100vh-82px)] items-center py-20 lg:py-24">
+          <div className="max-w-2xl">
 
-        <div
-          className="
-            grid
-            gap-10
-            min-h-[calc(100vh-110px)]
-            items-center
-            py-14
-            lg:grid-cols-[0.95fr_1.05fr]
-            lg:py-0
-          "
-        >
+            {/* Eyebrow */}
+            <p
+              className="
+                mb-7
+                text-xs
+                font-bold
+                uppercase
+                tracking-[0.18em]
+                text-ink/50
+              "
+            >
+              Curious minds · Ages 6–18
+            </p>
 
-          {/* ========================= */}
-          {/* LEFT CONTENT */}
-          {/* ========================= */}
-
-          <div className="relative z-30 max-w-[650px]">
-
-            {/* Badge */}
-
-            <div className="mb-7 flex items-center gap-3">
-
-              <span className="h-3 w-3 rounded-full bg-pink" />
-
-              <span className="text-sm font-bold uppercase tracking-[0.2em] text-pink">
-                WHERE IDEAS COME TO LIFE
-              </span>
-
-            </div>
-
-            {/* Heading */}
-
-            <h1 className="text-5xl font-extrabold leading-[1.03] tracking-tight sm:text-6xl lg:text-7xl">
-
-              From
-
+            {/* Headline */}
+            <h1
+              className="
+                text-[68px]
+                font-black
+                leading-[0.85]
+                text-ink
+                tracking-[-0.03em]
+                sm:text-[84px]
+                md:text-[96px]
+                lg:text-[108px]
+                xl:text-[116px]
+              "
+            >
+              The 
+              <span className="text-yellow"> Future</span> 
               <br />
-
-              <span className="relative inline-block text-pink">
-
-                "What if...?"
-
-                <span className="absolute -bottom-2 left-0 h-2 w-full rounded-full bg-yellow" />
-
-              </span>
-
+              doesn’t wait.
               <br />
-
-              to
-
-              <br />
-
-              <span className="text-teal">
-                "I built it!"
-              </span>
-
+              <span className="text-pink">Build it.</span>
             </h1>
 
             {/* Description */}
-
-            <p className="mt-7 max-w-xl text-lg leading-8 text-ink/80">
-
-              Every big invention starts with a small idea.
-
-              At{" "}
-              <strong>CodeWithTee</strong>, children turn their imagination
-              into games, apps, websites, animations and robots while building
-              confidence, creativity and problem-solving skills.
-
+            <p
+              className="
+                mt-8
+                max-w-lg
+                text-base
+                leading-7
+                text-ink/65
+                sm:text-lg
+                sm:leading-8
+              "
+            >
+              LSR helps young people learn software engineering and robotics
+              by making things, solving problems, and bringing their ideas to
+              life.
             </p>
 
             {/* Buttons */}
-
-            <div className="mt-9 flex flex-wrap gap-4">
-
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="#explore"
+                href="#software-engineering"
                 className="
                   group
                   inline-flex
+                  h-14
                   items-center
+                  justify-center
                   gap-3
                   rounded-full
-                  bg-pink
+                  bg-ink
                   px-7
-                  py-4
-                  font-semibold
+                  text-sm
+                  font-bold
                   text-white
-                  shadow-lg
-                  shadow-pink/20
-                  transition
-                  hover:-translate-y-1
+                  shadow-[0_10px_25px_rgba(17,17,17,0.12)]
+                  transition-all
+                  duration-300
+                  hover:-translate-y-0.5
+                  hover:bg-pink
                 "
               >
-                Explore Programs
+                Start Learning
 
                 <ArrowRight
-                  size={18}
-                  className="transition group-hover:translate-x-1"
+                  size={17}
+                  strokeWidth={2.5}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
                 />
               </Link>
 
               <Link
-                href="#contact"
+                href="#robotics"
                 className="
                   inline-flex
+                  h-14
                   items-center
                   justify-center
                   rounded-full
-                  border-2
-                  border-dark
-                  bg-white/70
+                  bg-white/90
                   px-7
-                  py-4
-                  font-semibold
-                  text-dark
-                  transition
-                  hover:bg-dark
-                  hover:text-white
+                  text-sm
+                  font-bold
+                  text-ink
+                  shadow-[0_10px_25px_rgba(17,17,17,0.08)]
+                  backdrop-blur-sm
+                  transition-all
+                  duration-300
+                  hover:-translate-y-0.5
+                  hover:bg-yellow
                 "
               >
-                Book a Trial Session
+                Explore robotics
               </Link>
-
             </div>
 
-            {/* Highlights */}
-
-            <div className="mt-10 flex flex-wrap gap-x-7 gap-y-4 border-t border-ink/10 pt-6">
-
-              {[
-                "Creative Thinkers",
-                "Curious Learners",
-                "Future Builders",
-              ].map((item) => (
-
-                <div
-                  key={item}
-                  className="flex items-center gap-2"
-                >
-
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow/30 text-sm text-pink">
-                    ✦
-                  </span>
-
-                  <span className="text-sm font-medium text-ink/70">
-                    {item}
-                  </span>
-
-                </div>
-
-              ))}
-
+            {/* Small supporting detail */}
+            <div className="mt-9 flex items-center gap-3 text-xs font-semibold text-ink/40">
+              <span>Software Engineering</span>
+              <span className="h-1 w-1 rounded-full bg-pink" />
+              <span>Robotics</span>
             </div>
-
           </div>
-
         </div>
-
       </div>
-
-      {/* ========================= */}
-      {/* RIGHT EDGE IMAGE */}
-      {/* ========================= */}
-
-      <HeroIllustration />
-
-      {/* ========================= */}
-      {/* MOBILE IMAGE */}
-      {/* ========================= */}
-
-      <div className="container-wide relative z-20 pb-16 lg:hidden">
-
-        <div className="relative overflow-hidden rounded-[36px] border-[6px] border-white bg-white shadow-xl">
-
-          <img
-            src={heroImage.src}
-            alt="Tutor teaching children programming"
-            className="aspect-[4/3] w-full object-cover"
-          />
-
-        </div>
-
-      </div>
-
-      {/* ========================= */}
-      {/* Bottom ribbon */}
-      {/* ========================= */}
-
-      <div className="relative z-30 border-y border-ink/10 bg-cream py-5">
-
-        <div className="marquee">
-
-          <div className="marquee-track gap-14 text-sm font-bold uppercase tracking-[0.18em] text-ink/45">
-
-            {Array.from({ length: 2 }).map((_, i) => (
-
-              <span
-                key={i}
-                className="flex items-center gap-14"
-              >
-
-                <span>Imagine</span>
-
-                <span className="text-pink">✦</span>
-
-                <span>Create</span>
-
-                <span className="text-teal">✦</span>
-
-                <span>Build</span>
-
-                <span className="text-yellow">✦</span>
-
-                <span>Share</span>
-
-                <span className="text-pink">✦</span>
-
-                <span>Explore</span>
-
-                <span className="text-teal">✦</span>
-
-                <span>Dream Big</span>
-
-                <span className="text-yellow">✦</span>
-
-              </span>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </div>
-
     </section>
   );
 }
