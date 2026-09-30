@@ -1,4 +1,4 @@
-import alfred from "@/app/images/linda.jpg";
+import alfred from "@/app/images/learn-to-code.png";
 
 
 export default function AboutAlf() {
