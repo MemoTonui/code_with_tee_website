@@ -47,7 +47,7 @@ export default function About() {
 
             <p>
               But one of my favourite things is seeing that moment when
-              something finally clicks — especially when I get to help someone
+              something finally clicks, especially when I get to help someone
               else get there.
             </p>
 
@@ -74,11 +74,6 @@ export default function About() {
             "
           />
 
-          {/* Yellow accent */}
-          <div className="absolute -left-8 top-10 h-20 w-20 rounded-full bg-yellow" />
-
-          {/* Pink accent */}
-          <div className="absolute -right-6 bottom-10 h-28 w-28 rounded-full bg-pink/20" />
 
           {/* Photo */}
           <div
@@ -98,29 +93,7 @@ export default function About() {
             />
           </div>
 
-          {/* Role card */}
-          <div
-            className="
-              absolute
-              -left-6
-              bottom-8
-              rounded-2xl
-              bg-white
-              px-5
-              py-4
-              shadow-[0_12px_30px_rgba(0,0,0,.10)]
-              sm:-left-10
-              sm:bottom-10
-            "
-          >
-            <p className="text-[11px] font-black uppercase tracking-[0.15em] text-ink/45">
-              Software engineer
-            </p>
-
-            <p className="mt-1 text-sm font-bold text-ink">
-              + coding tutor
-            </p>
-          </div>
+         
         </div>
       </div>
     </section>

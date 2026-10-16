@@ -8,17 +8,47 @@ const interests = [
   "Both",
 ];
 
+type Status = "idle" | "sending" | "error";
+
 export default function Contact() {
   const [interest, setInterest] = useState("");
   const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    if (!interest) return;
+    if (!interest || status === "sending") return;
 
-    // TODO: Connect this to your email/API service.
-    setSent(true);
+    const form = event.currentTarget;
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    setStatus("sending");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        throw new Error(result.error || "Something went wrong. Please try again.");
+      }
+
+      form.reset();
+      setStatus("idle");
+      setSent(true);
+    } catch (err) {
+      setStatus("error");
+      setErrorMessage(
+        err instanceof Error ? err.message : "Something went wrong. Please try again."
+      );
+    }
   }
 
   return (
@@ -72,14 +102,7 @@ export default function Contact() {
                   </p>
                 </div>
 
-                <div>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-ink/35">
-                    Format
-                  </p>
-                  <p className="mt-2 font-bold text-ink">
-                    Live online
-                  </p>
-                </div>
+               
 
                 <div>
                   <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-ink/35">
@@ -159,6 +182,16 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-8">
+
+                {/* Honeypot (hidden from people, catches spam bots) */}
+                <input
+                  type="text"
+                  name="company"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="hidden"
+                />
 
                 {/* Name */}
                 <div>
@@ -328,6 +361,7 @@ export default function Contact() {
                     id="message"
                     name="message"
                     rows={4}
+                    maxLength={5000}
                     placeholder="What are they curious about? What would you like them to learn?"
                     className="
                       w-full
@@ -347,9 +381,17 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* Error */}
+                {status === "error" && (
+                  <p role="alert" className="text-sm font-bold text-pink">
+                    {errorMessage}
+                  </p>
+                )}
+
                 {/* Submit */}
                 <button
                   type="submit"
+                  disabled={status === "sending"}
                   className="
                     group
                     flex
@@ -365,9 +407,14 @@ export default function Contact() {
                     transition-all
                     duration-300
                     hover:bg-ink
+                    disabled:cursor-not-allowed
+                    disabled:opacity-60
+                    disabled:hover:bg-pink
                   "
                 >
-                  <span>Start the conversation</span>
+                  <span>
+                    {status === "sending" ? "Sending..." : "Start the conversation"}
+                  </span>
 
                   <span className="text-xl transition-transform group-hover:translate-x-1">
                     →

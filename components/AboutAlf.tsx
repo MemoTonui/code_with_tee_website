@@ -1,4 +1,4 @@
-import alfred from "@/app/images/learn-to-code.png";
+import alfred from "@/app/images/alfie.jpg";
 
 
 export default function AboutAlf() {
@@ -81,14 +81,13 @@ export default function AboutAlf() {
             IMAGE
         ========================================================= */}
         <div className="relative mx-auto w-full max-w-[470px]">
-          <div className="absolute -right-5 -top-5 h-24 w-24 rounded-full bg-pink sm:-right-8 sm:h-28 sm:w-28" />
 
           <div className="relative overflow-hidden rounded-[2rem]">
             <img
               src={alfred.src}
               alt="Alfred Mboya teaching robotics"
               className="
-                aspect-[4/5]
+                aspect-[3/5]
                 w-full
                 object-cover
                 object-center
@@ -96,7 +95,6 @@ export default function AboutAlf() {
             />
           </div>
 
-          <div className="absolute -bottom-5 -left-5 h-20 w-20 rounded-full bg-yellow sm:-left-8 sm:h-24 sm:w-24" />
         </div>
       </div>
     </section>

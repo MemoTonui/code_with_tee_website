@@ -1,3 +1,10 @@
+const CONTACT_EMAIL = "info@lsr.co.ke";
+
+const WHATSAPP_NUMBER = "254748098387";
+const WHATSAPP_DISPLAY = "+254 748 098 387";
+const WHATSAPP_MESSAGE = "Hi LSR, I'd like to know more about your classes.";
+const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+
 export default function Footer() {
   return (
     <footer className="bg-dark py-14 text-white">
@@ -76,11 +83,44 @@ export default function Footer() {
               Contact
             </h3>
 
-            <div className="mt-5 space-y-3 text-white/65">
-              {/* Add the real LSR contact details here */}
-              <p>Contact details coming soon</p>
-              <p>Nairobi, Kenya</p>
-            </div>
+            <address className="mt-5 flex flex-col gap-4 not-italic">
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-white/35">
+                  Email
+                </p>
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="mt-1 inline-block break-all text-white/65 transition hover:text-white"
+                >
+                  {CONTACT_EMAIL}
+                </a>
+              </div>
+
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-white/35">
+                  WhatsApp
+                </p>
+                <a
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1 inline-block text-white/65 transition hover:text-white"
+                >
+                  {WHATSAPP_DISPLAY}
+                </a>
+              </div>
+
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-white/35">
+                  Location
+                </p>
+                <p className="mt-1 text-white/65">
+                  Nairobi, Kenya
+                </p>
+              </div>
+
+            
+            </address>
           </div>
         </div>
 
